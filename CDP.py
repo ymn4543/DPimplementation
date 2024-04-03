@@ -7,17 +7,19 @@ def main():
 
     noise = np.random.laplace(0, beta, df['Room Number'].size)
     df['Room Number'] += noise
+
     noise = np.random.laplace(0, beta, df['Billing Amount'].size)
     df['Billing Amount'] += noise
-    age_noise = np.random.laplace(0, beta, df['ages'].size)
-    df['ages'] += age_noise
+
+    age_noise = np.random.laplace(0, beta, df['Age'].size)
+    df['Age'] += age_noise
 
     # Display the updated DataFrame
-    print(df['ages'])
+    print(df['Age'])
+
+    df.to_csv('noisy_healthcare_dataset.csv', index=False)
 
 
 
 
-
-if "__name__" == "__main__":
-    main()
+main()
