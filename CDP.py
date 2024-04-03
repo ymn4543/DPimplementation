@@ -6,10 +6,10 @@ def pd.read_csv(url)
 
 
 # Generate Laplace noise for the 'room number' column
-noise = np.random.laplace(0, beta, df['room number'].size)
+noise = np.random.laplace(0, beta, df['Room Number'].size)
 
 # Add noise to the original 'room number' column
-df ['ages'] += noise 
+df ['Room Number'] += noise 
 
 
 def main():
