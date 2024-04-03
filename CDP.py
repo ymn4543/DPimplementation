@@ -11,6 +11,11 @@ noise = np.random.laplace(0, beta, df['Room Number'].size)
 # Add noise to the original 'room number' column
 df ['Room Number'] += noise 
 
+# Generate Laplace noise for the 'billing amount'
+noise = np.random.laplace(0, beta, df['Billing Amount'].size)
+
+# Add noise to the original 'billing amount'
+df ['Billing Amount'] += noise
 
 def main():
     print("hello world")
