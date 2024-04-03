@@ -1,24 +1,21 @@
-from pydp.algorithms.laplacian import BoundedMean
 import numpy as np
-
-url = 'https://github.com/ymn4543/DPimplementation/blob/main/healthcare_dataset%202.csv'
-df = pd.read_csv(url)
-
-
-# Generate Laplace noise for the 'room number' column
-noise = np.random.laplace(0, beta, df['Room Number'].size)
-
-# Add noise to the original 'room number' column
-df ['Room Number'] += noise 
-
-# Generate Laplace noise for the 'billing amount'
-noise = np.random.laplace(0, beta, df['Billing Amount'].size)
-
-# Add noise to the original 'billing amount'
-df ['Billing Amount'] += noise
+import pandas as pd
 
 def main():
-    print("hello world")
+    beta = 1
+    df = pd.read_csv('healthcare_dataset.csv')
+
+    noise = np.random.laplace(0, beta, df['Room Number'].size)
+    df['Room Number'] += noise
+    noise = np.random.laplace(0, beta, df['Billing Amount'].size)
+    df['Billing Amount'] += noise
+    age_noise = np.random.laplace(0, beta, df['ages'].size)
+    df['ages'] += age_noise
+
+    # Display the updated DataFrame
+    print(df['ages'])
+
+
 
 
 
