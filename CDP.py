@@ -38,9 +38,9 @@ def main():
     average_billing_by_medication = df.groupby('Medication')['BillingAmount'].mean().reset_index()
     print(average_billing_by_medication)
 
-    # Number of normal diagnosis
-    normal_diagnoses_count = df[df['Test Results'] == 'Normal'].shape[0]
-    print("Number of normal diagnoses:", normal_diagnoses_count)
+    # Number of normal diagnosis by age
+    normal_diagnoses_by_age_range = df[df['Test Results'] == 'Normal'].groupby('AgeRange').size()
+    print(normal_diagnoses_by_age_range)
 
     # Number of people who have blood type O, both + and - 
     number_of_people_with_blood_type_O = df[df['Blood Type'].str.startswith('O')].shape[0]
