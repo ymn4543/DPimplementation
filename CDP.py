@@ -43,7 +43,7 @@ def main():
     print("Number of normal diagnoses:", normal_diagnoses_count)
 
     # Number of people who have blood type O, both + and - 
-    number_of_people_with_blood_type_O = count_O = df[df['Blood Type'].str.startswith('O')].shape[0]
+    number_of_people_with_blood_type_O = df[df['Blood Type'].str.startswith('O')].shape[0]
 
 
 
