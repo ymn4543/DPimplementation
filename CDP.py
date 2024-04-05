@@ -39,7 +39,7 @@ def main():
     print(average_billing_by_medication)
 
     # Number of normal diagnosis
-    normal_diagnoses_count = df[df['Medical Condition'] == 'Normal'].shape[0]
+    normal_diagnoses_count = df[df['Test Results'] == 'Normal'].shape[0]
     print("Number of normal diagnoses:", normal_diagnoses_count)
 
     # Number of people who have blood type O, both + and - 
