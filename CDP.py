@@ -38,6 +38,11 @@ def main():
     average_billing_by_medication = df.groupby('Medication')['BillingAmount'].mean().reset_index()
     print(average_billing_by_medication)
 
+    # Number of normal diagnosis
+    normal_diagnoses_count = df[df['Medical Condition'] == 'Normal'].shape[0]
+    print("Number of normal diagnoses:", normal_diagnoses_count)
+
+
 
 
 main()
